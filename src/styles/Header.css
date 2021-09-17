@@ -1,0 +1,16 @@
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #075e54;
+    color: #fff;
+    height: 15vh;
+}
+
+@media (max-width: 900px) {
+    header {
+        padding: 0.4em;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}

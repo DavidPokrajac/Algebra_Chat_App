@@ -1,0 +1,199 @@
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  height: 65vh;
+  /* Custom Scrollbar supported for Mozilla Firefox */
+  scrollbar-color: #075E54 transparent;
+  scrollbar-width: thin;
+}
+
+.message {
+  display: flex;
+  padding: 0.6em 0;
+}
+
+.current {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  text-align: right;
+  padding: 0.6em 0;
+}
+
+.username {
+  margin-top: -10px;
+  background:#f5cba7;
+  border-radius: 10px;
+  border-bottom: 5px solid #075e54;
+  padding: 0.3em;
+  width: max-content;
+}
+
+.avatar {
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 0.4em 1em;
+}
+
+.message-content {
+  padding: 0.3em 0;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+}
+
+.align-username-right {
+  align-items: flex-end;
+}
+
+.align-username-left {
+  align-items: flex-start;
+}
+
+.text-area {
+  text-align: left;
+  background-color: #6dff8c;
+  position: relative;
+  width: 10em;
+  height: auto;
+  margin: 0.4em auto;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px 9px 5px 5px;
+  padding: 0.7em 0.8em;
+  word-wrap: wrap;
+  line-height: 1.4em;
+}
+  
+.text-area .arrow {
+  position: absolute;
+  width: 1.25em;
+  height: 0.9em;
+  transform: skewX(-40deg);
+  border-top-right-radius: 5px;
+  box-shadow: 0px 0px 3px black;
+  top: 0px;
+  right: -6px;
+  z-index: 10;
+  background-color: inherit;
+}
+  
+.arrow::after {
+  content: '';
+  display: inline-block;
+  width: 120%;
+  border-top-right-radius: 5px;
+  height: 120%;
+  position: relative;
+  top: 0.1px;
+  right: 4px;
+  background-color: inherit;
+  z-index: -1;
+}
+
+.other-text-area {
+  background-color: white;
+  position: relative;
+  width: 10em;
+  height: auto;
+  margin: 0.4em auto;
+  box-shadow: 0px 0px 3px black;
+  border-radius: 5px;
+  padding: 0.7em 0.8em;
+  word-wrap: wrap;
+  line-height: 1.4em;
+}
+  
+.other-text-area .other-arrow {
+  position: absolute;
+  width: 1.25em;
+  height: 0.9em;
+  transform: skewX(40deg);
+  border-top-left-radius: 5px;
+  box-shadow: 0px 0px 3px black;
+  top: 0px;
+  left: -7px;
+  z-index: 10;
+  background-color: inherit;
+}
+  
+.other-arrow::after {
+  content: '';
+  display: inline-block;
+  width: 115%;
+  border-top-left-radius: 5px;
+  height: 120%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  background-color: inherit;
+}
+
+.break {
+  word-wrap: break-word;
+  width: 15em;
+}
+
+.dont-break {
+  display: inline-block;
+  word-break: normal;
+}
+
+.time {
+  background-color: #6dff8c;
+  border-radius: 5px;
+  padding: 0.2em;
+  box-shadow: 0 0 2px black;
+}
+
+.time-two {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 0.2em;
+  box-shadow: 0 0 2px black;
+}
+
+.show-up-time {
+  opacity: 1;
+  animation: animate 1s ease-in-out 1 both;
+}
+
+@keyframes animate {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* Custom scrollbar supported for Chrome, Opera, and Safari */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #075E54;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+@media (max-width: 550px) {
+  ul {
+    height: 65vh;
+  }
+  .avatar {
+    width: 2.5em;
+    height: 2.5em;
+  }
+  .text-area, .other-text-area {
+    width: 8em;
+  }
+  .username {
+    font-size: 14px;
+  }
+  .message, .current {
+    padding: 0.4em 0.1em;
+  }
+}

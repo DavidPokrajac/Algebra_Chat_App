@@ -1,0 +1,51 @@
+.myForm {
+    width: inherit;
+    padding: 0.8em;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: none;
+    height: 10vh;
+}
+
+input[type="text"] {
+    display: flex;
+    width: 90%;
+    padding: 0.7em 1em;
+    border: none;
+    font-size: 1.2em;
+    background-color: #e2d9c5;
+}
+
+input[type="text"]:focus{
+    outline: none;
+    border-radius: 20px;
+    transition: border-radius 0.5s ease-in-out;
+}
+
+button {
+    width: 7%;
+    border-radius: 10%;
+    border: none;
+    background-color: #075e54;
+    color: whitesmoke;
+    text-align: center;
+    box-shadow: 0px 0px 2px black;
+    position: relative;
+}
+
+button:hover {
+    cursor: pointer;
+    top: -5px;
+    box-shadow: 0 0 5px black;
+}
+
+@media (max-width: 900px) {
+    input[type="text"] {
+        width: 85%;
+    }
+    button {
+        width: 10%;
+    }
+}
