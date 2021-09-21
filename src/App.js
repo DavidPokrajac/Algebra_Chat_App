@@ -22,7 +22,11 @@ class App extends React.Component {
     this.drone = new window.Scaledrone("lau2THw93CWZs6Tc", {
       data: this.state.user
     });
-    
+
+    this.room = this.drone.subscribe("observable-room");
+  }
+
+  componentDidMount() {
     this.drone.on('open', error => {
       if (error) {
         return console.error(error);
@@ -31,9 +35,7 @@ class App extends React.Component {
       member.id = this.drone.clientId;
       this.setState({user: member});
     });
-
-    const room = this.drone.subscribe("observable-room");
-    room.on('data', (data, member) => {
+    this.room.on('data', (data, member) => {
       const messages = this.state.messages;
       let date = new Date();
       let hours = date.getHours();
@@ -47,7 +49,6 @@ class App extends React.Component {
       messages.push({user: member, text: data, date: hours + ":" + minutes});
       this.setState({messages});
     });
-
   }
 
   randomName() {
